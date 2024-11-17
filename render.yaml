@@ -2,11 +2,11 @@ services:
   - type: redis
     name: Legacy for Family Notifier | Redis
     plan: free
+    ipAllowList: []
   - type: cron
     name: Legacy for Family Notifier | Cronjob
     schedule: "0 0 * * *"
     startCommand: "./bin/run.js run"
-    plan: free
     envVars:
       - key: NODE_ENV
         value: production
