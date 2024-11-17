@@ -20,7 +20,6 @@ export type DraftNotification = {
   lastSequenceIndexSent: undefined;
   lastSequenceSentAt: undefined;
   threadId: undefined;
-  legacyUrl: string;
 };
 
 export type CheckingNotification = {
@@ -30,7 +29,6 @@ export type CheckingNotification = {
   lastSequenceIndexSent: number;
   lastSequenceSentAt: Date;
   threadId: string;
-  legacyUrl: string;
 };
 
 export type CompletedNotification = {
@@ -40,7 +38,6 @@ export type CompletedNotification = {
   lastSequenceIndexSent: number;
   lastSequenceSentAt: Date;
   threadId: string;
-  legacyUrl: string;
 };
 
 export type CancelledNotification = {
@@ -50,7 +47,6 @@ export type CancelledNotification = {
   lastSequenceIndexSent: number;
   lastSequenceSentAt: Date;
   threadId: string;
-  legacyUrl: string;
 };
 
 export const validateNotification = (
@@ -68,7 +64,6 @@ export const notificationSchema = z
       lastSequenceIndexSent: z.undefined(),
       lastSequenceSentAt: z.undefined(),
       threadId: z.undefined(),
-      legacyUrl: z.string(),
     }),
     z.object({
       startedAt: z.date(),
@@ -77,7 +72,6 @@ export const notificationSchema = z
       lastSequenceIndexSent: z.number(),
       lastSequenceSentAt: z.date(),
       threadId: z.string(),
-      legacyUrl: z.string(),
     }),
     z.object({
       startedAt: z.date(),
@@ -86,7 +80,6 @@ export const notificationSchema = z
       lastSequenceIndexSent: z.number(),
       lastSequenceSentAt: z.date(),
       threadId: z.string(),
-      legacyUrl: z.string(),
     }),
     z.object({
       startedAt: z.date(),
@@ -95,7 +88,6 @@ export const notificationSchema = z
       lastSequenceIndexSent: z.number(),
       lastSequenceSentAt: z.date(),
       threadId: z.string(),
-      legacyUrl: z.string(),
     }),
   ])
   .refine(

@@ -52,7 +52,6 @@ export abstract class NotificationSequence {
       notificationsTotal: notification.sequenceOfMonthDays.length.toString(),
       notificationNumber: String(notification.lastSequenceIndexSent! + 1),
       notificationLabel: `${notification.startedAt.getMonth() + 1}/${notification.startedAt.getFullYear()}`,
-      notificationLegacyUrl: notification.legacyUrl,
       notificationNextCheckDate:
         this.getNextNotificationDate().toLocaleDateString(),
       notificationCompletionDate: completionDate.toLocaleDateString(),

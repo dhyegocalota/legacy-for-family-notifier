@@ -107,7 +107,6 @@ export class Notificator {
       threadId: undefined,
       lastSequenceSentAt: undefined,
       lastSequenceIndexSent: undefined,
-      legacyUrl: this.config.legacyUrl,
     };
 
     await this.storage.saveNotification(initialNotification);
@@ -122,7 +121,6 @@ export class Notificator {
     notification.status = NotificationStatus.CHECKING;
     notification.lastSequenceIndexSent = 0;
     notification.lastSequenceSentAt = new Date();
-    notification.legacyUrl = this.config.legacyUrl;
     notification.threadId = undefined;
     notification.sequenceOfMonthDays = this.sequences.map(
       (sequence) => sequence.monthDay,

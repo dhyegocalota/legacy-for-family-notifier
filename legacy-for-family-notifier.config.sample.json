@@ -17,5 +17,9 @@
   "managerEmailAddress": "manager@email.com",
   "familyEmailAddress": "family@email.com",
   "legacyUrl": "http://localhost",
-  "sequenceOfMonthDaysToNotify": [1, 7, 14, 31]
+  "sequenceOfMonthDaysToNotify": [1, 7, 14, 31],
+  "legacyEmail": {
+    "subject": "Sorry to inform you",
+    "body": "I am sorry to inform you that I have passed away. I have left this email for you."
+  }
 }

@@ -8,7 +8,6 @@ export interface Config {
   senderEmailAddress: string;
   managerEmailAddress: string;
   familyEmailAddress: string;
-  legacyUrl: string;
   checkEmail: EmailConfig;
   legacyEmail: EmailConfig;
   cancellationEmail: EmailConfig;
@@ -29,10 +28,6 @@ const DEFAULT_CONFIG: Partial<Config> = {
   checkEmail: {
     subject: '[Legacy Notification] {notificationLabel}',
     body: 'This is a check notification number #{notificationNumber}. Reply to this email to cancel the legacy email. If you do not cancel it, the legacy email will be sent on {notificationCompletionDate}.',
-  },
-  legacyEmail: {
-    subject: '[Legacy Notification] Content Available',
-    body: 'Please access your legacy content here: {notificationLegacyUrl}',
   },
   cancellationEmail: {
     subject: '[Legacy Notification] {notificationLabel}',
@@ -56,19 +51,16 @@ export const configSchema = z
     senderEmailAddress: z.string(),
     managerEmailAddress: z.string(),
     familyEmailAddress: z.string(),
-    legacyUrl: z.string(),
     checkEmail: z
       .object({
         subject: z.string(),
         body: z.string(),
       })
       .optional(),
-    legacyEmail: z
-      .object({
-        subject: z.string(),
-        body: z.string(),
-      })
-      .optional(),
+    legacyEmail: z.object({
+      subject: z.string(),
+      body: z.string(),
+    }),
     cancellationEmail: z
       .object({
         subject: z.string(),
