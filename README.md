@@ -110,13 +110,10 @@ I created a button to deploy this app to Render. You can deploy it with a single
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 1. Deploy to Render using the button above
-2. SSH into the Render Cron Service and run the following command:
-
-```bash
-NODE_ENV=development yarn
-yarn build
-./bin/run.js authenticate
-```
+2. Open the build logs and wait for the Authentication URL and the Tunnel URL
+3. Visit the Authentication URL and authenticate with your Google account
+4. Copy the `code` query parameter from the URL and paste in the Tunnel URL
+5. The build will complete automatically now
 
 ## Contributions
 
