@@ -5,8 +5,9 @@ services:
     ipAllowList: []
   - type: cron
     name: Legacy for Family Notifier | Cronjob
-    schedule: "0 0 * * *"
-    startCommand: "./bin/run.js run"
+    schedule: 0 0 * * *
+    buildCommand: NODE_ENV=development yarn install && yarn build
+    startCommand: ./bin/run.js run
     runtime: node
     envVars:
       - key: NODE_ENV

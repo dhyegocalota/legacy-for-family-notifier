@@ -107,12 +107,14 @@ This app should be easy to deploy to any production environment that supports No
 
 I created a button to deploy this app to Render. You can deploy it with a single click.
 
-1. Deploy to Render using the button below
-
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
+1. Deploy to Render using the button above
 2. SSH into the Render Cron Service and run the following command:
 
 ```bash
+NODE_ENV=development yarn
+yarn build
 ./bin/run.js authenticate
 ```
 
