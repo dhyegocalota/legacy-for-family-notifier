@@ -1,0 +1,21 @@
+{
+  "storage": {
+    "adapter": "redis",
+    "redis": {
+      "host": "localhost",
+      "port": 6379
+    }
+  },
+  "emailClient": {
+    "adapter": "gmail",
+    "gmail": {
+      "clientId": "abc",
+      "clientSecret": "xyz"
+    }
+  },
+  "senderEmailAddress": "sender@email.com",
+  "managerEmailAddress": "manager@email.com",
+  "familyEmailAddress": "family@email.com",
+  "legacyUrl": "http://localhost",
+  "sequenceOfMonthDaysToNotify": [1, 7, 14, 31]
+}

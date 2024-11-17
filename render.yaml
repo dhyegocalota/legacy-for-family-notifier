@@ -1,0 +1,11 @@
+services:
+  - type: cron
+    name: legacy-for-family-notifier
+    schedule: "0 0 * * *"
+    command: "yarn run legacy-for-family-notifier"
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CONFIG
+        sync: false

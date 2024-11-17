@@ -1,0 +1,7 @@
+node_modules
+/dist
+.env*
+!.env.sample*
+*.log
+legacy-for-family-notifier.config.json
+!legacy-for-family-notifier.config.sample.json

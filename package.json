@@ -1,0 +1,60 @@
+{
+  "name": "legacy-for-family-notifier",
+  "version": "0.1.0",
+  "main": "./dist/src/index.js",
+  "repository": "https://github.com/dhyegocalota/legacy-for-family-notifier",
+  "author": "Dhyego Calota <dhyegofernando@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "legacy-for-family-notifier": "./bin/run.js"
+  },
+  "scripts": {
+    "start": "./bin/run.js",
+    "build": "ttsc",
+    "lint": "eslint src/**/*.ts --fix",
+    "check-circular-dependencies": "dpdm ./src/index.ts"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.3",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^22.9.0",
+    "@types/nodemailer": "^6.4.16",
+    "@types/nodemailer-smtp-transport": "^2.7.8",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "dpdm": "^3.14.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^3.12.0",
+    "ttypescript": "^1.5.13",
+    "typescript": "^4.7.3",
+    "typescript-transform-paths": "^3.3.1"
+  },
+  "dependencies": {
+    "@oclif/core": "^4.0.32",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "ioredis": "^5.4.1",
+    "nodemailer": "^6.9.16",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "zod": "^3.23.8"
+  },
+  "oclif": {
+    "bin": "legacy-for-family-notifier",
+    "dirname": "legacy-for-family-notifier",
+    "commands": {
+      "strategy": "explicit",
+      "target": "./dist/commands/index.js"
+    },
+    "topicSeparator": " "
+  }
+}
