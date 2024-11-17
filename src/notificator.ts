@@ -234,11 +234,16 @@ export class Notificator {
     return notification;
   }
 
-  authenticate({ onRequestUrl }: AuthenticateInput): Promise<void> {
+  authenticate({
+    onServerAddress,
+    onRequestUrl,
+  }: AuthenticateInput): Promise<void> {
     return new Promise((resolve, reject) => {
       const server = http.createServer();
-      server.listen(0, () => {
+      server.listen(0, async () => {
         const serverAddress = server.address() as AddressInfo;
+        onServerAddress(serverAddress);
+
         const redirectUri = `http://localhost:${serverAddress.port}`;
         const authentication = this.emailClient.buildAuthentication({
           redirectUri,
@@ -277,5 +282,6 @@ export interface NotificatorOptions {
 }
 
 export interface AuthenticateInput {
+  onServerAddress: (address: AddressInfo) => void;
   onRequestUrl: (url: string) => void;
 }
