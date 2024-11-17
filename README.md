@@ -105,7 +105,7 @@ This app should be easy to deploy to any production environment that supports No
 
 ### Render
 
-We encourage using Render for deploying this app. Render is a cloud platform that makes it easy to deploy and scale applications. It offers a free tier that is perfect for small projects like this.
+I created a button to deploy this app to Render. You can deploy it with a single click.
 
 1. Deploy to Render using the button below
 
