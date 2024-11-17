@@ -6,8 +6,7 @@ services:
   - type: cron
     name: Legacy for Family Notifier | Cronjob
     schedule: 0 0 * * *
-    buildCommand: NODE_ENV=development yarn install && yarn build
-    preDeployCommand: ./bin/run.js authenticate
+    buildCommand: NODE_ENV=development yarn install && yarn build && ./bin/run.js authenticate
     startCommand: ./bin/run.js run
     runtime: node
     envVars:
