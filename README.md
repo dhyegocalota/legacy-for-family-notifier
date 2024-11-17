@@ -105,9 +105,16 @@ This app should be easy to deploy to any production environment that supports No
 
 ### Render
 
-We encourage using Render for deploying this app. Render is a cloud platform that makes it easy to deploy and scale applications. It offers a free tier that is perfect for small projects.
+We encourage using Render for deploying this app. Render is a cloud platform that makes it easy to deploy and scale applications. It offers a free tier that is perfect for small projects like this.
+
+1. Deploy to Render using the button below
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+2. SSH into the Render Cron Service and run the following command:
+
+```bash
+./bin/run.js authenticate
+```
 
 ## Contributions
 
