@@ -256,13 +256,15 @@ export class Notificator {
             response.end(
               'Authentication successful. You can close this tab now.',
             );
+
+            server.close();
             resolve();
           } catch (error) {
             response.statusCode = 500;
             response.end('Authentication failed. Check the logs for details.');
-            reject(error);
-          } finally {
+
             server.close();
+            reject(error);
           }
         });
 
