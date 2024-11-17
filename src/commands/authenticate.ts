@@ -30,8 +30,8 @@ export class AuthenticateCommand extends Command {
 
         const tunnel = await localtunnel({ port: address.port });
         this.log(
-          'After you are redirected back to the localhost URL, copy the `code` query parameter and paste in the following URL: ',
-          `${tunnel.url}/?code=YOUR_CODE_HERE`,
+          'After you are redirected back to the localhost URL, copy the `code` query parameter and execute the following command: ',
+          `curl ${tunnel.url}/?code=YOUR_CODE_HERE\n\n`,
         );
       },
       onRequestUrl: (url) => {
