@@ -1,10 +1,19 @@
 # Legacy for Family Notifier
 
+This is a CLI app that I built using Node.js, TypeScript, and Redis. It uses the Gmail API to send and receive emails, and it's built with OCLIF.
+
 **Disclosure: This project talks about death ⚰️**
 
-I designed this project to notify my family with my legacy message after my death. It ensures that important messages are delivered at the right time, providing peace of mind to users.
+> My family is my top priority—my wife, our home, everything we are building together. They are what drive me to do better every day, to think about the future, and to ensure I’m present, even when I can’t be there physically.
+>
+> We’re not taught to think or talk about death, but it’s necessary. It’s a difficult conversation, yet unavoidable, because it’s the only way to ensure that those who matter most to us will be cared for and informed when they need it the most. Ignoring it doesn’t change reality; planning is an act of love.
+>
+> With this in mind, I created Legacy for Family Notifier. A simple app with a clear purpose: to help those who care about their families leave everything organized, ensuring nothing is left unanswered or unsupported during critical times.
+>
+> If you also care deeply about your family, I invite you to explore, use, and collaborate. The project is open-source, and I believe that together we can create something even greater.
+>
+> Dhyego Calota
 
-This is a CLI app that I built using Node.js, TypeScript, and Redis. It uses the Gmail API to send and receive emails, and it's built with OCLIF.
 
 ## How is this app useful?
 
