@@ -111,9 +111,15 @@ I created a button to deploy this app to Render. You can deploy it with a single
 
 1. Deploy to Render using the button above
 2. Open the build logs and wait for the Authentication URL and the Tunnel URL
-3. Visit the Authentication URL and authenticate with your Google account
-4. Copy the `code` query parameter from the URL and paste in the Tunnel URL
-5. The build will complete automatically now
+3. Visit the Authentication URL and authenticate the Google account
+4. Copy the `code` query parameter from the URL and append to the Tunnel URL
+5. Execute the following commands:
+
+```bash
+TUNNEL_URL=<paste-tunnel-url-here>
+CODE=<paste-code-here>
+curl $TUNNEL_URL/?code=$CODE
+```
 
 ## Contributions
 
