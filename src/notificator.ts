@@ -143,12 +143,13 @@ export class Notificator {
     notification: Notification,
   ): Promise<Notification> {
     const now = new Date();
-    const hasNewMonthBegin =
-      now.getMonth() > notification.startedAt.getMonth() &&
-      now.getFullYear() > notification.startedAt.getFullYear();
+    const isDifferentMonthAndYear =
+      now.getMonth() !== notification.startedAt.getMonth() &&
+      now.getFullYear() !== notification.startedAt.getFullYear();
 
     const canRestart =
-      hasNewMonthBegin && this.sequences[0].isNotificationDue(notification);
+      isDifferentMonthAndYear &&
+      this.sequences[0].isNotificationDue(notification);
 
     if (!canRestart) {
       return notification;
