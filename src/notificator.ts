@@ -175,14 +175,15 @@ export class Notificator {
 
     const nextSequenceIndex = notification.lastSequenceIndexSent + 1;
     const nextSequence = this.sequences[nextSequenceIndex];
+
+    if (!nextSequence.isNotificationDue(notification)) {
+      return notification;
+    }
+
     const shouldComplete = nextSequenceIndex === this.sequences.length - 1;
 
     if (shouldComplete) {
       return this.completeNotification(notification);
-    }
-
-    if (!nextSequence.isNotificationDue(notification)) {
-      return notification;
     }
 
     notification.lastSequenceIndexSent = nextSequenceIndex;
