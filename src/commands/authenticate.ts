@@ -28,11 +28,15 @@ export class AuthenticateCommand extends Command {
           '\n\nWe detected you are running on Render. We will create a tunnel for you so that you can authenticate.',
         );
 
-        const tunnel = await localtunnel({ port: address.port });
-        this.log(
-          'After you are redirected back to the localhost URL, copy the `code` query parameter and execute the following command: ',
-          `curl ${tunnel.url}/?code=YOUR_CODE_HERE\n\n`,
-        );
+        try {
+          const tunnel = await localtunnel({ port: address.port });
+          this.log(
+            'After you are redirected back to the localhost URL, copy the `code` query parameter and execute the following command: ',
+            `curl ${tunnel.url}/?code=YOUR_CODE_HERE\n\n`,
+          );
+        } catch (error) {
+          this.error('Failed to create local tunnel', { exit: 1 });
+        }
       },
       onRequestUrl: (url) => {
         this.log('Please visit the following URL to authenticate:', url);
